@@ -1,6 +1,14 @@
 import math
 
 class Launcher:
+    """
+    The Launcher class is designed to predict the angle that is needed to launch a projectile 
+    through the air to hit a specific target.\n
+    The projectile launcher that is being used is from the University of Kansas physics department for PHSX 216 - Physics I Laboratory.\n
+    The projectile that the launcher is using is a yellow 10 gram hollow plastic sphere that came 
+    with the kit. A metal 67kg sphere is also provided, and implementation of such may be added 
+    in the future.
+    """
     
     def predict(self, target):
         """Predits all possible angles of a given target, accounting for all possible power levels. Returns a dictionary of it's findings."""
