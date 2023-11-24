@@ -10,17 +10,17 @@ class Launcher:
         
         # Remove invalid angles from low
         for i, angle in enumerate(lowAngles):
-            if (angle < -0.1 and angle >= 91):
+            if (angle != None and angle < -0.1 and angle >= 91):
                 lowAngles[i] = None
                 
         # Remove invalid angles from medium
         for i, angle in enumerate(mediumAngles):
-            if (angle < -0.1 and angle >= 91):
+            if (angle != None and angle < -0.1 and angle >= 91):
                 mediumAngles[i] = None
                 
         # Remove invalid angles from high
         for i, angle in enumerate(highAngles):
-            if (angle < -0.1 and angle >= 91):
+            if (angle != None and angle < -0.1 and angle >= 91):
                 highAngles[i] = None
         
         # Return data
@@ -34,10 +34,7 @@ class Launcher:
         
         # Try + side of equation
         try:
-            angle = round(-(-2.5527 + math.sqrt(-0.1464 * distance + 16.32258849))/(0.0732), 3)
-            # Leaving room for flexibility for specific edge-cases
-            if (angle > -1 and angle < 91):
-                angles[0] = angle
+            angles[0] = round(-(-2.5527 + math.sqrt(-0.1464 * distance + 16.32258849))/(0.0732), 3)
         except ValueError:
             # Out of range
             pass
@@ -46,10 +43,7 @@ class Launcher:
             
         # Try - side of equation
         try:
-            angle = round(-(-2.5527 - math.sqrt(-0.1464 * distance + 16.32258849))/(0.0732), 3)
-            # Leaving room for flexibility for specific edge-cases
-            if (angle > -1 and angle < 91):
-                angles[1] = angle
+            angles[1] = round(-(-2.5527 - math.sqrt(-0.1464 * distance + 16.32258849))/(0.0732), 3)
         except ValueError:
             # Out of range
             pass
@@ -64,10 +58,7 @@ class Launcher:
         
         # Try + side of equation
         try:
-            angle = round(-(-7.8803 + math.sqrt(-0.3956 * distance + 103.06746))/(0.1987), 3)
-            # Leaving room for flexibility for specific edge-cases
-            if (angle >= -0.1 and angle < 91):
-                angles[0] = angle
+            angles[0] = round(-(-7.8803 + math.sqrt(-0.3956 * distance + 103.06746))/(0.1987), 3)
         except ValueError:
             # Out of range
             pass
@@ -76,10 +67,7 @@ class Launcher:
             
         # Try - side of equation
         try:
-            angle = round(-(-7.8803 + math.sqrt(-0.3956 * distance + 103.06746))/(0.1987), 3)
-            # Leaving room for flexibility for specific edge-cases
-            if (angle >= -0.1 and angle < 91):
-                angles[1] = angle
+            angles[1] = round(-(-7.8803 + math.sqrt(-0.3956 * distance + 103.06746))/(0.1987), 3)
         except ValueError:
             # Out of range
             pass
@@ -94,10 +82,7 @@ class Launcher:
         
         # Try + side of equation
         try:
-            angle = round(-(-15.083 + math.sqrt(-0.7124 * distance + 334.620477))/(0.3562), 3)
-            # Leaving room for flexibility for specific edge-cases
-            if (angle >= -0.1 and angle < 91):
-                angles[0] = angle
+            angles[0] = round(-(-15.083 + math.sqrt(-0.7124 * distance + 334.620477))/(0.3562), 3)
         except ValueError:
             # Out of range
             pass
@@ -106,10 +91,7 @@ class Launcher:
             
         # Try - side of equation
         try:
-            angle = round(-(-15.083 + math.sqrt(-0.7124 * distance + 334.620477))/(0.3562), 3)
-            # Leaving room for flexibility for specific edge-cases
-            if (angle >= -0.1 and angle < 91):
-                angles[1] = angle
+            angles[1] = round(-(-15.083 + math.sqrt(-0.7124 * distance + 334.620477))/(0.3562), 3)
         except ValueError:
             # Out of range
             pass
