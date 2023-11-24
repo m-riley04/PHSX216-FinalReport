@@ -18,17 +18,17 @@ class Launcher:
         
         # Remove invalid angles from low
         for i, angle in enumerate(lowAngles):
-            if (angle != None and angle < -0.1 and angle >= 91):
+            if (angle != None and angle < -0.1 or angle >= 91):
                 lowAngles[i] = None
                 
         # Remove invalid angles from medium
         for i, angle in enumerate(mediumAngles):
-            if (angle != None and angle < -0.1 and angle >= 91):
+            if (angle != None and angle < -0.1 or angle >= 91):
                 mediumAngles[i] = None
                 
         # Remove invalid angles from high
         for i, angle in enumerate(highAngles):
-            if (angle != None and angle < -0.1 and angle >= 91):
+            if (angle != None and angle < -0.1 or angle >= 91):
                 highAngles[i] = None
         
         # Return data
