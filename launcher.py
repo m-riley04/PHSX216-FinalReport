@@ -4,7 +4,11 @@ class Launcher:
     """
     The Launcher class is designed to predict the angle that is needed to launch a projectile 
     through the air to hit a specific target.\n
-    The projectile launcher that is being used is from the University of Kansas physics department for PHSX 216 - Physics I Laboratory.\n
+    The projectile launcher that is being used is from the University of Kansas physics department 
+    for PHSX 216 - Physics I Laboratory. The angle of the launch is measured from 0 degrees to 90
+    degrees directly on the launcher's body itself.\n
+    The launcher also has 3 modes: low, medium, and high. The power of the launch is determined by
+    these modes.\n
     The projectile that the launcher is using is a yellow 10 gram hollow plastic sphere that came 
     with the kit. A metal 67kg sphere is also provided, and implementation of such may be added 
     in the future.
