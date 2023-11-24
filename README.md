@@ -4,7 +4,7 @@ Author: Riley Meyerkorth
 * Class: PHSX 216 - Physics 1 Laboratory
 * TA: Stephen Schan
 ## Functionality
-Allows the user to predict the needed angle for a projectile launcher when given a specific target. 
+Allows the user to predict the needed angle for a projectile launcher when given a specific target. Includes extensive docstrings, and robust error checking.
 
 ## Classes
 ### Application
