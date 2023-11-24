@@ -10,8 +10,8 @@ class Launcher:
     The launcher also has 3 modes: low, medium, and high. The power of the launch is determined by
     these modes.\n
     The projectile that the launcher is using is a yellow 10 gram hollow plastic sphere that came 
-    with the kit. A metal 67kg sphere is also provided, and implementation of such may be added 
-    in the future.
+    with the kit. A metal 67kg sphere is also provided which may provide more accurate short-distance 
+    results, and implementation of such may be added in the future.
     """
     
     def predict(self, target):
