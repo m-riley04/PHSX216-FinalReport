@@ -19,26 +19,20 @@ class Launcher:
         lowAngles = self.low(target)
         mediumAngles = self.medium(target)
         highAngles = self.high(target)
+        angles = [lowAngles, mediumAngles, highAngles]
         
         # Remove invalid angles from low
-        for i, angle in enumerate(lowAngles):
-            if (angle != None and angle < -0.1 or angle >= 91):
-                lowAngles[i] = None
-                
-        # Remove invalid angles from medium
-        for i, angle in enumerate(mediumAngles):
-            if (angle != None and angle < -0.1 or angle >= 91):
-                mediumAngles[i] = None
-                
-        # Remove invalid angles from high
-        for i, angle in enumerate(highAngles):
-            if (angle != None and angle < -0.1 or angle >= 91):
-                highAngles[i] = None
+        for setting in angles:
+            for i, angle in enumerate(setting):
+                if (angle == None):
+                    break
+                if (angle < -0.1 or angle >= 91):
+                    setting[i] = None
         
         # Return data
-        return {"Low": lowAngles,
-                "Medium": mediumAngles,
-                "High": highAngles}
+        return {"Low": angles[0],
+                "Medium": angles[1],
+                "High": angles[2]}
     
     def low(self, distance):
         """Returns a list of possible angles (floats) in degrees given a distance for the low power setting"""
@@ -79,7 +73,7 @@ class Launcher:
             
         # Try - side of equation
         try:
-            angles[1] = round(-(-7.8803 + math.sqrt(-0.3956 * distance + 103.06746))/(0.1987), 3)
+            angles[1] = round(-(-7.8803 - math.sqrt(-0.3956 * distance + 103.06746))/(0.1987), 3)
         except ValueError:
             # Out of range
             pass
@@ -103,7 +97,7 @@ class Launcher:
             
         # Try - side of equation
         try:
-            angles[1] = round(-(-15.083 + math.sqrt(-0.7124 * distance + 334.620477))/(0.3562), 3)
+            angles[1] = round(-(-15.083 - math.sqrt(-0.7124 * distance + 334.620477))/(0.3562), 3)
         except ValueError:
             # Out of range
             pass
